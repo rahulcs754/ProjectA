@@ -12,7 +12,7 @@
 
 
 
-Some images :
+Output :
 -------------
 # When web app start
 
