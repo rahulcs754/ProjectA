@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>
+            Excel file upload and processing : Django Example : ThePythonDjango.Com
+        </title>
+    </head>
+    <body style="margin:30px;">
+        <form action="{% url "myapp:index" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file"
+                   title="Upload excel file"
+                   name="excel_file"
+                   style="border: 1px solid black; padding: 5px;"
+                   required="required">
+            <p>
+            <input type="submit"
+                   value="Upload"
+                   style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        </form>
+
+        <p></p>
+        <hr>
+        {% for r in excel_data_lat_long %}
+            {{ r }}<br>
+        {% endfor %}
+        
+        {% if file_name %}
+        <!-- Download address  and lat, lng data -->
+        <hr>
+        <div id="downl">  
+           <form class="export_excel" id="login_form" action="/download_my_pdf">
+            {% csrf_token %}
+              <button class="btn btn-lg btn-primary btn-block" value="Export to Excel" type="submit">Export To Excel</button>
+           </form> 
+        </div>
+        {% endif %}
+
+        
+    </body>
+</html>
