@@ -20,7 +20,7 @@ Some images :
 
 # After inserting excel file 
 
-![](images/S2.png)
+![](images/s2.png)
 
 
 
